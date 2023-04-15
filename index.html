@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+  body{
+    overflow: hidden;
+    background:linear-gradient
+              (white);
+  }
+  .container{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh;
+      overflow :hidden;
+      width:100%;
+  }
+  .calculator{
+    background: black;
+      padding:10px;
+      height:70vh;
+      width:50vh;
+      margin:20px;
+     box-shadow: 1px 0.5px 20px black;
+  }
+  button{
+          width:20%;
+      height:13%;
+      border: none;
+      margin: 5px;
+      font-size: 29px;
+      border-radius: 100px;
+      direction :ltr;
+  }
+  button:hover{
+     background-color: grey;
+  }
+      #userInput{
+      border:none;
+      width:90%;
+      padding:10px;
+     border:1px solid black;
+      text-align:right;
+      margin:20px;
+      margin-left: 0;
+      
+      background:#f2f2f2;
+      font-size: 40px;
+     
+    }
+    .same{
+      width: 100%;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="calculator">
+      <input  placeholder="0" id="userInput" disabled></input>
+      <br>
+      <button onclick="show(1)">1</button>
+      <button onclick="show(2)">2</button>
+      <button onclick="show(3)">3</button>
+      <button style="background-color:skyblue" onclick="show('+')">+</button>
+      <br>
+      <button onclick="show(4)">4</button>
+      <button onclick="show(5)">5</button>
+      <button onclick="show(6)">6</button>
+      <button style="background-color:skyblue" onclick="show('-')">-</button>
+    <br>
+      <button onclick="show(7)">7</button>
+      <button onclick="show(8)">8</button>
+      <button onclick="show(9)">9</button>
+      <button style="background-color:	 skyblue " onclick="show('*')">*</button>
+  <br>
+      <button onclick="show('.')">.</button>
+      <button onclick="show(0)">0</button>
+      <button style="background-color:	 skyblue"onclick="clr()">c</button>
+      <button style="background-color:skyblue" onclick="show('/')">/</button>
+
+  <br>
+    <button  class="same"style="background-color:skyblue"
+    onclick="equal()">=</button>
+      
+    </div>
+  </div>
+
+  <script>
+  const userInput=document.getElementById("userInput");
+  var expression ='';
+  
+  function show(num){
+    expression += num;
+    userInput.value+=num;
+  }
+  
+  function equal(){
+    userInput.value=eval(expression);
+    /*expression ='';*/
+  }
+  
+  function clr(){
+expression='';
+userInput.value='';
+
+  }
+  
+  
+</script>
+
+
+</body>
+
+
+</html>
